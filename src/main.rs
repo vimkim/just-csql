@@ -45,20 +45,13 @@ fn select_query(queries: &[Query]) -> Option<Query> {
     None
 }
 
-fn main() -> io::Result<()> {
-    // Load configuration from YAML file
-    let config_content = fs::read_to_string("config.yml").expect("Failed to read config.yml");
-    let config: Config = serde_yaml::from_str(&config_content).expect("Failed to parse config.yml");
+fn main() {
+    let config_content = fs::read_to_string("queries.toml").expect("Failed to read queries.toml");
+    let config: Config = toml::from_str(&config_content).expect("Failed to parse queries.toml");
 
-    // Display the fuzzy selector
-    if let Some(selected_query) = select_query(&config.queries) {
-        // Print the selected query
-        println!("Selected Query:");
-        println!("Alias: {}", selected_query.alias);
-        println!("SQL: {}", selected_query.sql);
-    } else {
-        println!("No query selected.");
+    for query in config.queries {
+        println!("Alias: {}", query.alias);
+        println!("SQL: {}", query.sql);
+        println!();
     }
-
-    Ok(())
 }

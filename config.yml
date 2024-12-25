@@ -1,9 +1,0 @@
-queries:
-  - alias: "current_time"
-    sql: "SELECT NOW();"
-  - alias: "create_table"
-    sql: "CREATE TABLE IF NOT EXISTS test (id SERIAL PRIMARY KEY, name TEXT);"
-  - alias: "insert_example"
-    sql: "INSERT INTO test (name) VALUES ('example');"
-  - alias: "fetch_all"
-    sql: "SELECT * FROM test;"

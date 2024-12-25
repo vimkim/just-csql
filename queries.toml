@@ -1,0 +1,15 @@
+[[queries]]
+alias = "current_time"
+sql = "SELECT NOW();"
+
+[[queries]]
+alias = "create_table"
+sql = "CREATE TABLE IF NOT EXISTS test (id SERIAL PRIMARY KEY, name TEXT);"
+
+[[queries]]
+alias = "insert_example"
+sql = "INSERT INTO test (name) VALUES ('example');"
+
+[[queries]]
+alias = "fetch_all"
+sql = "SELECT * FROM test;"
