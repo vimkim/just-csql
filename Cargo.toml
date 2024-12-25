@@ -1,0 +1,11 @@
+[package]
+name = "just_csql"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ratatui = "0.29.0"
+serde = { version = "1.0.216", features = ["derive"] }
+serde_yaml = "0.9.34"
+skim = "0.15.5"
+tokio = "1.42.0"
