@@ -1,15 +1,8 @@
-[[queries]]
-alias = "current_time"
-sql = "SELECT NOW();"
+username = "shared_user"
+dbname = "shared_db"
 
-[[queries]]
-alias = "create_table"
-sql = "CREATE TABLE IF NOT EXISTS test (id SERIAL PRIMARY KEY, name TEXT);"
-
-[[queries]]
-alias = "insert_example"
-sql = "INSERT INTO test (name) VALUES ('example');"
-
-[[queries]]
-alias = "fetch_all"
-sql = "SELECT * FROM test;"
+[queries]
+current_time = "SELECT NOW();"
+create_table = "CREATE TABLE IF NOT EXISTS test (id SERIAL PRIMARY KEY, name TEXT);"
+insert_example = "INSERT INTO test (name) VALUES ('example');"
+fetch_all = "SELECT * FROM test;"
